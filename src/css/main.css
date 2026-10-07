@@ -1,0 +1,321 @@
+/* معرفی فونت‌ها */
+@font-face {
+  font-family: "Sans";
+  src: url("../fonts/Iranian Sans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yekan";
+  src: url("../fonts/Yekan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Sans", sans-serif;
+  direction: rtl;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.font-Yekan {
+  font-family: "Yekan", sans-serif !important;
+}
+
+/* خط‌خوردگی روی قیمت تخفیف */
+.text-discount {
+  position: relative;
+  display: inline-block;
+}
+
+.text-discount::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1.5px;
+  background-color: #9ca3af;
+  transform: translateY(-50%);
+}
+
+/* استایل اسلایدر Swiper */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.05);
+}
+
+/* =========================
+   FOOTER - LILIAN
+   ========================= */
+
+.site-footer {
+  width: 100%;
+  background-color: #3a3a3a;
+  color: #ffffff;
+  direction: rtl;
+  padding: 58px 60px 40px;
+  box-sizing: border-box;
+}
+
+.footer-container {
+  max-width: 100%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr 1.15fr 1.1fr;
+  gap: 55px;
+
+  direction: rtl;
+  align-items: start;
+}
+
+
+/* =========================
+   خبرنامه
+   ========================= */
+
+.footer-newsletter {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.footer-newsletter h4 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-family: "Sans", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+.footer-newsletter input {
+  width: 100%;
+  height: 34px;
+
+  box-sizing: border-box;
+
+  margin-bottom: 11px;
+
+  padding: 0 12px;
+
+  background-color: #858585;
+  border: 1px solid #bdbdbd;
+
+  color: #ffffff;
+
+  font-family: "Sans", sans-serif;
+  font-size: 12px;
+
+  outline: none;
+
+  text-align: right;
+}
+
+.footer-newsletter input::placeholder {
+  color: #eeeeee;
+}
+
+.footer-newsletter input:focus {
+  border-color: #ffffff;
+}
+
+.footer-newsletter button {
+  width: 100%;
+  height: 34px;
+
+  background-color: transparent;
+
+  border: 2px solid #eeeeee;
+
+  color: #ffffff;
+
+  font-family: "Sans", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.footer-newsletter button:hover {
+  background-color: #ffffff;
+  color: #3a3a3a;
+}
+
+
+/* =========================
+   ستون‌های فوتر
+   ========================= */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column h4 {
+  margin: 0 0 17px;
+
+  color: #ffffff;
+
+  font-family: "Sans", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+
+  line-height: 1.6;
+}
+
+.footer-column a {
+  margin-bottom: 10px;
+
+  color: #d2d2d2;
+
+  text-decoration: none;
+
+  font-family: "Sans", sans-serif;
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+  color: #ffffff;
+}
+
+
+/* =========================
+   لوگو
+   ========================= */
+
+.footer-brand {
+  direction: ltr;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: auto;
+  height: 34px;
+
+  object-fit: contain;
+
+  filter: brightness(0) invert(1);
+}
+
+
+/* =========================
+   شبکه‌های اجتماعی
+   ========================= */
+
+.footer-socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  margin-top: 18px;
+}
+
+.footer-socials a {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  color: #eeeeee;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+
+  transition: opacity 0.2s ease;
+}
+
+.footer-socials a:hover {
+  opacity: 0.6;
+}
+
+
+/* =========================
+   ریسپانسیو
+   ========================= */
+
+@media (max-width: 1024px) {
+
+  .site-footer {
+    padding: 45px 35px 35px;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .footer-newsletter {
+    grid-column: span 2;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .site-footer {
+    padding: 40px 22px 30px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-newsletter {
+    grid-column: span 1;
+  }
+
+  .footer-column {
+    align-items: flex-start;
+  }
+
+  .footer-brand {
+    direction: ltr;
+  }
+
+}

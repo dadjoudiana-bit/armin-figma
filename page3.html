@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سبد خرید و مشخصات محصول | لیلیان</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./src/css/main.css" />
+</head>
+<body class="bg-[#FAFAFA] text-[#1A1A1A] font-sans antialiased min-h-screen selection:bg-black selection:text-white">
+
+  <div class="min-h-screen flex flex-col md:flex-row">
+
+    <aside class="w-full md:w-[380px] lg:w-[420px] bg-white border-l border-zinc-200 flex flex-col justify-between p-6 shrink-0 shadow-sm z-20">
+
+      <div>
+        <div class="flex items-center justify-between pb-4 border-b border-zinc-200 mb-6">
+          <a href="index.html" class="text-zinc-400 hover:text-black text-2xl font-light leading-none p-1 transition">&times;</a>
+          <a href="index.html" class="flex items-center gap-2 text-xs font-bold text-black hover:opacity-75 transition">
+            <span>ادامه خرید</span>
+            <svg class="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+            </svg>
+          </a>
+        </div>
+
+        <div id="sidebar-items" class="space-y-6"></div>
+      </div>
+
+      <div class="pt-5 border-t border-zinc-200 mt-6">
+        <div class="flex justify-between items-center mb-4">
+          <span class="text-xs font-bold text-zinc-600">جمع سفارش:</span>
+          <span id="sidebar-total" class="text-sm font-black text-black">۰ تومان</span>
+        </div>
+        <a href="./sabadkharid.html">
+          <button class="w-full bg-black hover:bg-zinc-800 text-white text-xs font-bold py-4 transition-all duration-300 shadow-md hover:shadow-lg tracking-wider">
+            تکمیل خرید و پرداخت
+          </button>
+        </a>
+      </div>
+
+    </aside>
+
+    <main class="flex-1 flex flex-col bg-white">
+
+      <header class="w-full px-8 py-4 border-b border-zinc-100 flex items-center justify-between">
+        <nav class="flex items-center gap-7 text-xs font-medium text-zinc-600">
+          <a href="index.html" class="hover:text-black transition">تماس با ما</a>
+          <a href="index.html" class="hover:text-black transition">درباره ما</a>
+          <a href="index.html" class="hover:text-black transition">مردانه</a>
+          <a href="index.html" class="hover:text-black transition">زنانه</a>
+        </nav>
+
+        <a href="index.html" class="flex items-center gap-2 text-xl font-black tracking-tight text-black">
+          <span>لیلیان</span>
+          <svg class="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="3" stroke-width="2"/>
+            <path stroke-linecap="round" stroke-width="2" d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+          </svg>
+        </a>
+      </header>
+
+      <div class="p-8 lg:p-12 max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+        <div class="lg:col-span-6 order-2 lg:order-1 flex flex-col">
+          <h1 id="p-title" class="text-2xl lg:text-3xl font-black text-black mb-2"></h1>
+
+          <div class="flex items-center gap-3 mb-2">
+            <span id="p-old" class="text-xs text-zinc-400 line-through"></span>
+            <span id="p-price" class="text-sm font-black text-rose-600"></span>
+          </div>
+
+          <div class="flex text-amber-400 text-xs mb-4">
+            ★ ★ ★ ★ ★
+          </div>
+
+          <p class="text-xs leading-relaxed text-zinc-500 text-justify mb-8">
+            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+          </p>
+
+          <div class="mb-6">
+            <div class="flex justify-between items-center mb-2">
+              <span class="text-xs font-bold text-black">انتخاب سایز</span>
+              <a href="#" class="text-[11px] text-zinc-400 hover:text-black transition underline underline-offset-4">راهنمای انتخاب سایز</a>
+            </div>
+            <div id="sizes" class="flex gap-2 text-xs">
+              <button type="button" data-size="XS" class="size-btn"></button>
+              <button type="button" data-size="S"  class="size-btn"></button>
+              <button type="button" data-size="M"  class="size-btn"></button>
+              <button type="button" data-size="L"  class="size-btn"></button>
+              <button type="button" data-size="XL" class="size-btn"></button>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <span class="text-xs font-bold text-black block mb-2">رنگ‌های موجود</span>
+            <div id="colors" class="flex gap-3 items-center">
+              <button type="button" data-color="مشکی"    data-hex="#1A1A1A" class="color-btn w-6 h-6 rounded-full"></button>
+              <button type="button" data-color="قهوه‌ای" data-hex="#8C7A70" class="color-btn w-6 h-6 rounded-full"></button>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button type="button" onclick="addCurrentProduct()" class="flex-1 bg-black hover:bg-zinc-800 text-white text-xs font-bold py-3.5 transition shadow-sm hover:shadow tracking-wide flex items-center justify-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
+              <span>افزودن به سبد خرید</span>
+            </button>
+            <div class="flex items-center border border-zinc-300 text-xs h-[46px] bg-zinc-50">
+              <button type="button" onclick="changeQty(1)" class="px-3 hover:bg-black hover:text-white transition text-zinc-700 font-bold h-full">+</button>
+              <span id="p-qty" class="px-3 text-black font-bold">۱</span>
+              <button type="button" onclick="changeQty(-1)" class="px-3 hover:bg-black hover:text-white transition text-zinc-700 font-bold h-full">-</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6 order-1 lg:order-2 flex gap-4">
+          <div class="flex-1 bg-[#F5F5F5] aspect-[3/4] overflow-hidden border border-zinc-200">
+            <img id="main-img" src="" alt="" class="w-full h-full object-cover transition duration-300 hover:scale-105" />
+          </div>
+
+          <div class="flex flex-col gap-2 w-16 shrink-0">
+            <div class="w-16 h-20 bg-zinc-100 border-2 border-black overflow-hidden cursor-pointer shadow-sm">
+              <img src="" alt="" class="thumb-img w-full h-full object-cover transition duration-300 hover:scale-105" />
+            </div>
+            <div class="w-16 h-20 bg-zinc-100 border border-zinc-200 hover:border-black overflow-hidden cursor-pointer transition">
+              <img src="" alt="" class="thumb-img w-full h-full object-cover transition duration-300 hover:scale-105" />
+            </div>
+            <div class="w-16 h-20 bg-zinc-100 border border-zinc-200 hover:border-black overflow-hidden cursor-pointer transition">
+              <img src="" alt="" class="thumb-img w-full h-full object-cover transition duration-300 hover:scale-105" />
+            </div>
+            <div class="w-16 h-20 bg-zinc-100 border border-zinc-200 hover:border-black overflow-hidden cursor-pointer transition">
+              <img src="" alt="" class="thumb-img w-full h-full object-cover transition duration-300 hover:scale-105" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="px-8 lg:px-12 py-10 border-t border-zinc-200 bg-[#F8F8F8] mt-auto">
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="text-xs font-black uppercase tracking-wider text-black">براساس سلیقه شما</h3>
+          <span class="h-[1px] flex-1 bg-zinc-200 mr-4"></span>
+        </div>
+        <div id="recommend" class="grid grid-cols-2 sm:grid-cols-4 gap-4"></div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script>
+    const PRODUCTS = {
+      product1: { name: "کت بلند پشمی",             price: 3900000, old: 4850000, image: "./src/image/content/content-1/picture.png" },
+      product2: { name: "پافر زمستانی",             price: 5250000, old: 6200000, image: "./src/image/content/content-1/picture (1).png" },
+      product3: { name: "پافر بلند زمستانی",        price: 4700000, old: 5700000, image: "./src/image/content/content-1/picture (2).png" },
+      product4: { name: "پافر بلند کالکشن زمستانی", price: 4500000, old: 5500000, image: "./src/image/content/content-1/picture (3).png" },
+    };
+
+    const productId = new URLSearchParams(location.search).get("id");
+    const currentId = PRODUCTS[productId] ? productId : "product1";
+    const product = PRODUCTS[currentId];
+
+    let selSize = "M";
+    let selColor = "مشکی";
+    let qty = 1;
+
+    const faNum = n => new Intl.NumberFormat("fa-IR").format(n);
+    const fmt = n => faNum(n) + " تومان";
+    const getCart = () => JSON.parse(localStorage.getItem("shoppingCart")) || [];
+    const saveCart = c => localStorage.setItem("shoppingCart", JSON.stringify(c));
+
+    function renderProduct() {
+      document.getElementById("p-title").textContent = product.name;
+      document.getElementById("p-price").textContent = fmt(product.price);
+      document.getElementById("p-old").textContent = fmt(product.old);
+      document.getElementById("main-img").src = product.image;
+      document.getElementById("main-img").alt = product.name;
+      document.getElementById("p-qty").textContent = faNum(qty);
+      document.title = product.name + " | لیلیان";
+
+      document.querySelectorAll(".thumb-img").forEach(img => {
+        img.src = product.image;
+        img.alt = product.name;
+      });
+
+      document.querySelectorAll(".size-btn").forEach(b => {
+        b.textContent = b.dataset.size;
+        b.className = "size-btn w-9 h-9 flex items-center justify-center transition " +
+          (b.dataset.size === selSize
+            ? "border-2 border-black bg-black text-white font-bold"
+            : "border border-zinc-200 text-zinc-500 hover:border-black hover:text-black");
+      });
+
+      document.querySelectorAll(".color-btn").forEach(b => {
+        b.style.backgroundColor = b.dataset.hex;
+        b.className = "color-btn w-6 h-6 rounded-full transition " +
+          (b.dataset.color === selColor
+            ? "ring-2 ring-offset-2 ring-black"
+            : "hover:ring-2 hover:ring-offset-2 hover:ring-zinc-400");
+      });
+    }
+
+    function renderRecommend() {
+      const others = Object.keys(PRODUCTS).filter(id => id !== currentId);
+      document.getElementById("recommend").innerHTML = others.map(id => `
+        <a href="product.html?id=${id}" class="aspect-[3/4] bg-white border border-zinc-200 overflow-hidden group cursor-pointer shadow-sm block">
+          <img src="${PRODUCTS[id].image}" alt="${PRODUCTS[id].name}" class="w-full h-full object-cover transition duration-500 group-hover:scale-110" />
+        </a>
+      `).join("");
+    }
+
+    document.getElementById("sizes").addEventListener("click", e => {
+      const b = e.target.closest(".size-btn");
+      if (b) { selSize = b.dataset.size; renderProduct(); }
+    });
+
+    document.getElementById("colors").addEventListener("click", e => {
+      const b = e.target.closest(".color-btn");
+      if (b) { selColor = b.dataset.color; renderProduct(); }
+    });
+
+    function changeQty(d) {
+      qty = Math.max(1, qty + d);
+      renderProduct();
+    }
+
+    /* ========= افزودن به سبد ========= */
+    function addCurrentProduct() {
+      const cart = getCart();
+      const cartId = `${currentId}_${selSize}_${selColor}`;
+      const existing = cart.find(p => p.id === cartId);
+
+      if (existing) {
+        existing.quantity += qty;
+      } else {
+        cart.push({
+          id: cartId,
+          name: `${product.name} (سایز ${selSize} - ${selColor})`,
+          price: product.price,
+          image: product.image,
+          quantity: qty,
+        });
+      }
+      saveCart(cart);
+      renderSidebar();
+    }
+
+    function renderSidebar() {
+      const cart = getCart();
+      const box = document.getElementById("sidebar-items");
+
+      if (cart.length === 0) {
+        box.innerHTML = `<p class="text-center text-xs text-zinc-400 py-10">سبد خرید شما خالی است</p>`;
+      } else {
+        box.innerHTML = cart.map((p, i) => `
+          <div class="flex gap-4 pb-5 border-b border-zinc-100 relative">
+            <button type="button" onclick="removeItem(${i})" class="absolute top-0 right-0 text-zinc-300 hover:text-rose-600 transition" title="حذف">✕</button>
+
+            <div class="w-20 h-28 bg-[#F5F5F5] shrink-0 overflow-hidden border border-zinc-100">
+              <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover" />
+            </div>
+
+            <div class="flex-1 flex flex-col justify-between pr-2">
+              <h4 class="text-xs font-bold text-black pr-4">${p.name}</h4>
+
+              <div class="flex items-end justify-between mt-3">
+                <div class="flex items-center border border-zinc-300 bg-zinc-50 text-xs">
+                  <button type="button" onclick="sideQty(${i}, 1)" class="px-2 py-0.5 hover:bg-black hover:text-white transition text-zinc-700 font-bold">+</button>
+                  <span class="px-2.5 text-black font-semibold">${faNum(p.quantity)}</span>
+                  <button type="button" onclick="sideQty(${i}, -1)" class="px-2 py-0.5 hover:bg-black hover:text-white transition text-zinc-700 font-bold">-</button>
+                </div>
+                <span class="text-xs font-black text-rose-600">${fmt(p.price * p.quantity)}</span>
+              </div>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      const total = cart.reduce((s, p) => s + p.price * p.quantity, 0);
+      document.getElementById("sidebar-total").textContent = fmt(total);
+    }
+
+    function sideQty(i, d) {
+      const cart = getCart();
+      cart[i].quantity += d;
+      if (cart[i].quantity < 1) cart.splice(i, 1);
+      saveCart(cart);
+      renderSidebar();
+    }
+
+    function removeItem(i) {
+      const cart = getCart();
+      cart.splice(i, 1);
+      saveCart(cart);
+      renderSidebar();
+    }
+
+    renderProduct();
+    renderRecommend();
+    renderSidebar();
+  </script>
+
+</body>
+</html>

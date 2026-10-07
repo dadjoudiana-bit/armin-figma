@@ -1,0 +1,102 @@
+/* فونت‌های محلی */
+@font-face {
+  font-family: "Sans";
+  src: url("../fonts/Iranian Sans.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Yekan";
+  src: url("../fonts/Yekan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ریست و پایه استایل‌ها */
+*, ::after, ::before {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: #e5e7eb;
+}
+
+html, :host {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Sans", sans-serif;
+  direction: rtl;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button, input {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: transparent;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* کلاس‌های اختصاصی */
+.font-Yekan {
+  font-family: "Yekan", sans-serif !important;
+}
+
+.text-discount {
+  position: relative;
+  display: inline-block;
+}
+
+.text-discount::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1.5px;
+  background-color: #9ca3af;
+  transform: translateY(-50%);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+  overflow: hidden;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.05);
+}

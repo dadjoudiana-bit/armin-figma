@@ -1,0 +1,890 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>مرحله سوم خرید - پرداخت | لیلیان</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+
+  <style>
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    .gateway-selected {
+      border: 2px solid black !important;
+      background: #fafafa;
+      box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    }
+
+    .gateway-card img {
+      max-width: 70px;
+      max-height: 42px;
+      object-fit: contain;
+    }
+  </style>
+</head>
+
+<body class="bg-[#f9f9f9] text-zinc-800 antialiased min-h-screen flex flex-col">
+
+<header class="border-b border-zinc-200 bg-white sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+
+    <div class="flex items-center gap-4 text-zinc-600">
+      <a href="sabadkharid.html">🛒</a>
+      <a href="#">👤</a>
+      <button type="button">🔍</button>
+    </div>
+
+    <div class="flex items-center gap-8">
+
+      <nav class="hidden md:flex items-center gap-6 text-xs md:text-sm">
+        <a href="#">زنانه</a>
+        <a href="#">مردانه</a>
+        <a href="#">درباره ما</a>
+        <a href="#">تماس با ما</a>
+      </nav>
+
+      <a href="index.html" class="text-xl font-black text-black">
+        لیلیان
+      </a>
+
+    </div>
+  </div>
+</header>
+
+
+<main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 py-10 w-full">
+
+
+  <div class="flex items-center justify-center gap-4 mb-10">
+
+    <div class="w-8 h-8 rounded-full bg-zinc-300 text-white flex items-center justify-center text-xs">
+      ✔
+    </div>
+
+    <div class="w-12 h-[1px] bg-zinc-300"></div>
+
+    <div class="w-8 h-8 rounded-full bg-zinc-300 text-white flex items-center justify-center text-xs">
+      ✔
+    </div>
+
+    <div class="w-12 h-[1px] bg-zinc-300"></div>
+
+    <div class="w-8 h-8 rounded-full bg-zinc-800 text-white flex items-center justify-center text-xs font-bold shadow">
+      ۳
+    </div>
+
+    <div class="w-12 h-[1px] bg-zinc-300"></div>
+
+    <div class="w-8 h-8 rounded-full bg-zinc-200 text-zinc-500 flex items-center justify-center text-xs font-bold">
+      ۴
+    </div>
+
+  </div>
+
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+
+    <div class="lg:col-span-8 space-y-6">
+
+
+      <div class="border border-zinc-200 bg-white p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+
+        <div class="w-full sm:w-2/3 flex">
+
+          <button
+            type="button"
+            onclick="applyCoupon()"
+            class="bg-[#4a4a4a] hover:bg-black text-white px-8 py-2.5 text-xs">
+            ثبت
+          </button>
+
+          <input
+            type="text"
+            id="coupon-code"
+            placeholder="کد تخفیف خود را وارد کنید..."
+            class="w-full border border-zinc-300 px-3 py-2 text-xs">
+
+        </div>
+
+        <label class="text-xs font-bold">
+          ثبت کد تخفیف
+        </label>
+
+      </div>
+
+
+      <!-- PAYMENT TYPE -->
+
+      <div class="border border-zinc-200 bg-white p-5">
+
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+          <div class="flex items-center gap-8">
+
+            <label class="flex items-center gap-2 cursor-pointer">
+
+              <input
+                type="radio"
+                name="payment_type"
+                value="cod"
+                onchange="togglePaymentType('cod')"
+                class="accent-black w-4 h-4">
+
+              <span class="text-xs">
+                پرداخت درب محل
+              </span>
+
+            </label>
+
+
+            <label class="flex items-center gap-2 cursor-pointer">
+
+              <input
+                type="radio"
+                name="payment_type"
+                value="online"
+                checked
+                onchange="togglePaymentType('online')"
+                class="accent-black w-4 h-4">
+
+              <span class="text-xs font-bold">
+                پرداخت اینترنتی
+              </span>
+
+            </label>
+
+          </div>
+
+          <h3 class="font-bold text-sm">
+            روش پرداخت
+          </h3>
+
+        </div>
+
+      </div>
+
+
+
+      <div
+        id="gateways-container"
+        class="border border-zinc-200 bg-white p-6">
+
+        <div class="flex items-center justify-between mb-6">
+
+          <div></div>
+
+          <h3 class="font-bold text-sm">
+            درگاه پرداخت
+          </h3>
+
+        </div>
+
+
+        <div class="flex flex-wrap gap-4 justify-center sm:justify-start">
+
+
+          <button
+            type="button"
+            onclick="selectGateway(this,'پاسارگاد')"
+            class="gateway-card w-32 h-24 border border-zinc-200 rounded p-2 flex flex-col items-center justify-center gap-2">
+
+            <img
+              src="https://cdn.tetherland.com/logo/banks-svg/Bank%20-%20Pasargad%20-%20Color.svg"
+              alt="بانک پاسارگاد">
+
+            <span class="text-[10px]">
+              بانک پاسارگاد
+            </span>
+
+          </button>
+
+
+
+          <button
+            type="button"
+            onclick="selectGateway(this,'ملت')"
+            class="gateway-card w-32 h-24 border border-zinc-200 rounded p-2 flex flex-col items-center justify-center gap-2">
+
+            <img
+              src="https://cdn.tetherland.com/logo/banks-svg/Bank%20-%20Mellat%20-%20Color.svg"
+              alt="بانک ملت">
+
+            <span class="text-[10px]">
+              بانک ملت
+            </span>
+
+          </button>
+
+
+
+          <button
+            type="button"
+            onclick="selectGateway(this,'سامان')"
+            class="gateway-card gateway-selected w-32 h-24 rounded p-2 flex flex-col items-center justify-center gap-2">
+
+            <img
+              src="https://cdn.tetherland.com/logo/banks-svg/Bank%20-%20Saman%20-%20Color.svg"
+              alt="بانک سامان">
+
+            <span class="text-[10px] font-bold">
+              بانک سامان
+            </span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="flex items-center justify-between pt-4">
+
+        <a
+          href="./saptsefaresh.html"
+          class="text-xs text-zinc-600 border-b border-zinc-400">
+          ← بازگشت به مرحله ارسال
+        </a>
+
+
+        <button
+          type="button"
+          onclick="finalSubmitOrder()"
+          class="bg-[#3b3b3b] hover:bg-black text-white px-8 py-3 text-xs font-medium transition shadow">
+
+          ثبت سفارش و پرداخت ←
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="lg:col-span-4 border border-zinc-200 bg-white p-5 h-fit sticky top-20">
+
+      <h3 class="font-bold text-sm text-center pb-4 border-b">
+        سبد خرید
+      </h3>
+
+
+      <div class="space-y-4 py-4 text-xs border-b">
+
+        <div class="flex justify-between text-zinc-600">
+
+          <span>
+            قیمت کالاها
+          </span>
+
+          <span id="base-price">
+            در حال محاسبه...
+          </span>
+
+        </div>
+
+
+        <div class="flex justify-between">
+
+          <span>
+            قیمت ارسال
+          </span>
+
+          <span id="shipping-price">
+            رایگان
+          </span>
+
+        </div>
+
+
+        <div
+          id="discount-row"
+          class="hidden flex justify-between text-emerald-600 font-bold">
+
+          <span>
+            کد تخفیف
+          </span>
+
+          <span id="discount-amount">
+            - ۰ تومان
+          </span>
+
+        </div>
+
+
+        <div class="flex justify-between text-sm font-bold border-t pt-3">
+
+          <span>
+            جمع سبد خرید
+          </span>
+
+          <span id="total-price">
+            در حال محاسبه...
+          </span>
+
+        </div>
+
+
+        <div class="flex justify-between text-red-600 font-bold">
+
+          <span>
+            سود شما از خرید
+          </span>
+
+          <span id="saving-price">
+            ۰ تومان
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <button
+        type="button"
+        onclick="finalSubmitOrder()"
+        class="w-full bg-[#c31a22] hover:bg-red-700 text-white py-3 mt-4 text-xs font-bold">
+
+        ثبت سفارش
+
+      </button>
+
+
+      <p class="text-[10px] text-center text-zinc-400 mt-3">
+        ارسال رایگان برای خریدهای بالای ۲ میلیون تومان
+      </p>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer class="bg-[#3b3b3b] text-zinc-300 text-xs py-12 mt-16">
+
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <div>
+
+      <h4 class="text-white font-bold mb-3">
+        اولین کسی باش که از تخفیف‌ها باخبر میشه
+      </h4>
+
+      <input
+        type="email"
+        placeholder="ایمیل"
+        class="w-full p-2 mb-2 bg-[#666] text-white">
+
+      <input
+        type="text"
+        placeholder="نام شما"
+        class="w-full p-2 mb-2 bg-[#666] text-white">
+
+      <button
+        type="button"
+        class="w-full border border-white p-2">
+        اشتراک
+      </button>
+
+    </div>
+
+
+    <div>
+
+      <h4 class="text-white font-bold mb-3">
+        درباره لیلیان
+      </h4>
+
+      <ul class="space-y-2">
+        <li>اتاق خبر لیلیان</li>
+        <li>همکاری با ما</li>
+        <li>تماس با ما</li>
+        <li>درباره ما</li>
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h4 class="text-white font-bold mb-3">
+        خدمات مشتریان
+      </h4>
+
+      <ul class="space-y-2">
+        <li>پاسخ به سوالات متداول</li>
+        <li>شرایط استفاده</li>
+        <li>حریم خصوصی</li>
+        <li>گزارش باگ</li>
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h4 class="text-white font-bold mb-3">
+        راهنمای خرید
+      </h4>
+
+      <ul class="space-y-2">
+        <li>خرید قسطی</li>
+        <li>نحوه ثبت سفارش</li>
+        <li>رویه ارسال سفارش</li>
+        <li>شیوه‌های پرداخت</li>
+      </ul>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+let selectedBank = "سامان";
+let discountApplied = false;
+
+let basePrice = 0;
+let shippingPrice = 0;
+let finalPrice = 0;
+
+
+function toPersianNumber(number) {
+
+  return Number(number).toLocaleString("fa-IR");
+
+}
+
+
+// فرمت تومان
+function formatPrice(number) {
+
+  return toPersianNumber(number) + " تومان";
+
+}
+
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const savedOrder =
+    localStorage.getItem("lilianOrder");
+
+  if (!savedOrder) {
+
+    alert("اطلاعات سفارش پیدا نشد.");
+
+    window.location.href =
+      "./saptsefaresh.html";
+
+    return;
+
+  }
+
+
+  let order;
+
+  try {
+
+    order = JSON.parse(savedOrder);
+
+  } catch (error) {
+
+    alert("اطلاعات سفارش نامعتبر است.");
+
+    window.location.href =
+      "./saptsefaresh.html";
+
+    return;
+
+  }
+
+
+  if (
+    order.subtotal !== undefined &&
+    !isNaN(Number(order.subtotal))
+  ) {
+
+    basePrice = Number(order.subtotal);
+
+  }
+
+  else if (
+    order.basePrice !== undefined &&
+    !isNaN(Number(order.basePrice))
+  ) {
+
+    basePrice = Number(order.basePrice);
+
+  }
+
+  else if (
+    order.productsTotal !== undefined &&
+    !isNaN(Number(order.productsTotal))
+  ) {
+
+    basePrice = Number(order.productsTotal);
+
+  }
+
+  else if (
+    order.total !== undefined &&
+    !isNaN(Number(order.total))
+  ) {
+
+    const savedTotal = Number(order.total);
+
+    if (order.shippingMethod === "post") {
+
+      basePrice = savedTotal - 45000;
+
+    } else {
+
+      basePrice = savedTotal;
+
+    }
+
+  }
+
+
+  if (order.shippingMethod === "post") {
+
+    shippingPrice = 45000;
+
+    document.getElementById("shipping-price").innerText =
+      formatPrice(shippingPrice);
+
+  } else {
+
+    shippingPrice = 0;
+
+    document.getElementById("shipping-price").innerText =
+      "رایگان";
+
+  }
+
+
+  if (basePrice < 0) {
+    basePrice = 0;
+  }
+
+
+  updatePrices();
+
+});
+
+
+function updatePrices() {
+
+  let discount = 0;
+
+  if (discountApplied) {
+
+    discount =
+      Math.round(basePrice * 0.10);
+
+  }
+
+
+  finalPrice =
+    basePrice +
+    shippingPrice -
+    discount;
+
+
+  if (finalPrice < 0) {
+    finalPrice = 0;
+  }
+
+
+  document.getElementById("base-price").innerText =
+    formatPrice(basePrice);
+
+
+  if (discountApplied) {
+
+    document.getElementById("discount-amount").innerText =
+      "- " + formatPrice(discount);
+
+    document.getElementById("discount-row")
+      .classList.remove("hidden");
+
+  }
+
+
+  document.getElementById("total-price").innerText =
+    formatPrice(finalPrice);
+
+
+  document.getElementById("saving-price").innerText =
+    formatPrice(discount);
+
+}
+
+
+function selectGateway(element, bankName) {
+
+  document
+    .querySelectorAll(".gateway-card")
+    .forEach(function(button) {
+
+      button.classList.remove(
+        "gateway-selected"
+      );
+
+    });
+
+
+  element.classList.add(
+    "gateway-selected"
+  );
+
+
+  selectedBank = bankName;
+
+}
+
+
+function togglePaymentType(type) {
+
+  const gateways =
+    document.getElementById(
+      "gateways-container"
+    );
+
+
+  if (type === "cod") {
+
+    gateways.classList.add(
+      "opacity-40",
+      "pointer-events-none"
+    );
+
+  } else {
+
+    gateways.classList.remove(
+      "opacity-40",
+      "pointer-events-none"
+    );
+
+  }
+
+}
+
+
+function applyCoupon() {
+
+  const code =
+    document
+      .getElementById("coupon-code")
+      .value
+      .trim();
+
+
+  if (!code) {
+
+    alert(
+      "لطفاً ابتدا کد تخفیف را وارد کنید."
+    );
+
+    return;
+
+  }
+
+
+  if (discountApplied) {
+
+    alert(
+      "این کد تخفیف قبلاً اعمال شده است."
+    );
+
+    return;
+
+  }
+
+
+  discountApplied = true;
+
+  updatePrices();
+
+  alert(
+    "کد تخفیف با موفقیت اعمال شد."
+  );
+
+}
+
+
+function finalSubmitOrder() {
+
+  const paymentMethod =
+    document.querySelector(
+      'input[name="payment_type"]:checked'
+    );
+
+
+  if (!paymentMethod) {
+
+    alert(
+      "لطفاً روش پرداخت را انتخاب کنید."
+    );
+
+    return;
+
+  }
+
+
+  const savedOrder =
+    localStorage.getItem("lilianOrder");
+
+
+  if (!savedOrder) {
+
+    alert(
+      "اطلاعات سفارش پیدا نشد."
+    );
+
+    window.location.href =
+      "./saptsefaresh.html";
+
+    return;
+
+  }
+
+
+  let order;
+
+  try {
+
+    order =
+      JSON.parse(savedOrder);
+
+  } catch (error) {
+
+    alert(
+      "اطلاعات سفارش نامعتبر است."
+    );
+
+    return;
+
+  }
+
+
+
+  order.subtotal =
+    basePrice;
+
+  order.shippingPrice =
+    shippingPrice;
+
+  order.discount =
+    discountApplied
+      ? Math.round(basePrice * 0.10)
+      : 0;
+
+  order.finalPrice =
+    finalPrice;
+
+
+
+  if (
+    paymentMethod.value === "cod"
+  ) {
+
+    order.paymentMethod =
+      "پرداخت درب محل";
+
+    order.paymentStatus =
+      "پرداخت در محل";
+
+
+    localStorage.setItem(
+      "lilianOrder",
+      JSON.stringify(order)
+    );
+
+
+    localStorage.setItem(
+      "paymentCompleted",
+      "true"
+    );
+
+
+    localStorage.setItem(
+      "orderCompleted",
+      "true"
+    );
+
+
+    localStorage.setItem(
+      "checkoutStep",
+      "4"
+    );
+
+
+    window.location.href =
+      "./residkharid.html";
+
+    return;
+
+  }
+
+
+
+  order.paymentMethod =
+    "پرداخت اینترنتی";
+
+  order.bank =
+    selectedBank;
+
+  order.paymentStatus =
+    "پرداخت موفق";
+
+
+  localStorage.setItem(
+    "lilianOrder",
+    JSON.stringify(order)
+  );
+
+
+  localStorage.setItem(
+    "paymentCompleted",
+    "true"
+  );
+
+
+  localStorage.setItem(
+    "orderCompleted",
+    "true"
+  );
+
+
+  localStorage.setItem(
+    "checkoutStep",
+    "4"
+  );
+
+
+
+  window.location.href =
+    "./residkharid.html";
+
+}
+
+</script>
+
+</body>
+</html>
+```

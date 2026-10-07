@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>جزئیات محصول - کت بلند پشمی</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Sans", "sans-serif"],
+              Yekan: ["Yekan", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="stylesheet" href="./src/css/main.css" />
+  </head>
+  <body class="bg-gray-100 flex justify-center py-6 font-sans">
+    
+    <div class="w-full max-w-[1320px] bg-white shadow-lg overflow-hidden">
+      
+      <!-- هدر -->
+      <header class="h-[65px] px-6 lg:px-12 flex items-center justify-between border-b border-gray-100">
+        <div class="flex items-center">
+          <a href="index.html">
+            <img src="./src/image/logo-text.png" alt="ایرانیان" class="h-7 w-auto object-contain" />
+          </a>
+        </div>
+
+        <nav class="hidden md:flex items-center gap-8 text-[14px] font-bold text-[#3D3D3D]">
+          <a href="index.html" class="hover:text-black transition">زنانه</a>
+          <a href="#" class="hover:text-black transition">مردانه</a>
+          <a href="#" class="hover:text-black transition">درباره ما</a>
+          <a href="#" class="hover:text-black transition">تماس باما</a>
+        </nav>
+
+        <div class="flex items-center gap-5">
+          <button type="button"><img src="./src/image/Search.png" alt="جستجو" class="w-5 h-5 object-contain" /></button>
+          <button type="button"><img src="./src/image/User Alt.png" alt="حساب" class="w-5 h-5 object-contain" /></button>
+          <button type="button"><img src="./src/image/Shopping Cart.png" alt="سبد" class="w-5 h-5 object-contain" /></button>
+        </div>
+      </header>
+
+      <div class="px-6 lg:px-12 py-4 text-xs text-gray-500 border-b border-gray-50">
+        <a href="index.html" class="hover:text-black">صفحه اصلی</a> / 
+        <a href="index.html#products" class="hover:text-black">زنانه</a> / 
+        <span class="text-black font-bold">کت بلند پشمی</span>
+      </div>
+
+      <main class="px-6 lg:px-12 py-10 space-y-12">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+          
+          <div class="lg:col-span-7 flex flex-col">
+            <h1 class="text-2xl lg:text-3xl font-bold mb-3">کت بلند پشمی</h1>
+            
+            <div class="flex items-center gap-4 font-Yekan mb-4">
+              <span class="text-rose-700 text-2xl font-bold">۳,۹۰۰,۰۰۰ تومان</span>
+              <span class="text-gray-400 line-through text-sm">۴,۸۵۰,۰۰۰ تومان</span>
+            </div>
+
+            <div class="flex items-center gap-1 text-amber-500 text-sm mb-6">
+              <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              <span class="text-gray-400 text-xs font-Yekan mr-2">(۴.۵ از ۵)</span>
+            </div>
+
+            <p class="text-sm text-gray-600 leading-relaxed mb-6 border-b border-gray-100 pb-6">
+              کت بلند پشمی با آستری ضد حساسیت و دوخت صنعتی بسیار باکیفیت؛ مناسب برای فصول پاییز و زمستان. قابلیت ست شدن با انواع بوت و لباس‌های رسمی و کژوال.
+            </p>
+
+            <div class="mb-6">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-xs font-bold">انتخاب سایز:</span>
+                <a href="#" class="text-[11px] text-gray-400 hover:underline">راهنمای انتخاب سایز</a>
+              </div>
+              <div id="size-options" class="flex gap-2" role="radiogroup" aria-label="انتخاب سایز">
+                <button type="button" role="radio" aria-checked="false" data-size="S" class="size-btn w-10 h-10 border border-gray-300 text-xs font-bold hover:border-black transition">S</button>
+                <button type="button" role="radio" aria-checked="false" data-size="M" class="size-btn w-10 h-10 border border-gray-300 text-xs font-bold hover:border-black transition">M</button>
+                <button type="button" role="radio" aria-checked="true" data-size="L" class="size-btn w-10 h-10 border border-black bg-black text-white text-xs font-bold">L</button>
+                <button type="button" role="radio" aria-checked="false" data-size="XL" class="size-btn w-10 h-10 border border-gray-300 text-xs font-bold hover:border-black transition">XL</button>
+                <button type="button" role="radio" aria-checked="false" data-size="2X" class="size-btn w-10 h-10 border border-gray-300 text-xs font-bold hover:border-black transition">2X</button>
+              </div>
+            </div>
+
+            <div class="mb-8">
+              <span class="block text-xs font-bold mb-2">رنگ‌های موجود:</span>
+              <div id="color-options" class="flex gap-3" role="radiogroup" aria-label="انتخاب رنگ">
+                <button type="button" role="radio" aria-checked="true" aria-label="مشکی" data-color="مشکی" class="color-btn w-6 h-6 rounded-full bg-black ring-2 ring-offset-2 ring-gray-500"></button>
+                <button type="button" role="radio" aria-checked="false" aria-label="قهوه‌ای" data-color="قهوه‌ای" class="color-btn w-6 h-6 rounded-full bg-[#8A795D] hover:ring-2 hover:ring-gray-300"></button>
+              </div>
+            </div>
+
+            <div class="flex gap-3 pt-6 border-t border-gray-100">
+              <div class="flex items-center border border-gray-300 px-4 py-2 gap-4">
+                <button type="button" id="qty-plus" aria-label="افزایش تعداد" class="text-sm font-bold text-gray-700 hover:text-black">+</button>
+                <span id="qty-value" class="text-xs font-Yekan w-4 text-center" aria-live="polite">۱</span>
+                <button type="button" id="qty-minus" aria-label="کاهش تعداد" class="text-sm font-bold text-gray-700 hover:text-black">-</button>
+              </div>
+              <a href="page3.html" class="page3">
+                <button type="button" id="add-to-cart" class="flex-1 bg-black text-white text-xs font-bold py-3.5 hover:bg-neutral-800 transition">
+                افزودن به سبد خرید
+              </button>
+              </a>
+            </div>
+            <p id="cart-status" class="text-xs text-gray-500 mt-3 min-h-[1rem]" role="status"></p>
+          </div>
+          
+
+          <div class="lg:col-span-5 flex gap-3">
+            <div class="flex-1 bg-[#F5F5F5] h-[480px] overflow-hidden">
+              <img id="main-product-img" src="./src/image/content/content-1/picture.png" alt="کت بلند پشمی" class="w-full h-full object-cover transition-all duration-300" />
+            </div>
+
+            <div class="w-20 flex flex-col gap-2">
+              <img src="./src/image/content/content-1/picture.png" alt="تصویر محصول" class="thumb w-full h-20 object-cover cursor-pointer border-2 border-black" />
+              <img src="./src/image/content/content-1/picture (1).png" alt="تصویر محصول" class="thumb w-full h-20 object-cover cursor-pointer border border-gray-200 hover:border-black" />
+              <img src="./src/image/content/content-1/picture (2).png" alt="تصویر محصول" class="thumb w-full h-20 object-cover cursor-pointer border border-gray-200 hover:border-black" />
+              <img src="./src/image/content/content-1/picture (3).png" alt="تصویر محصول" class="thumb w-full h-20 object-cover cursor-pointer border border-gray-200 hover:border-black" />
+            </div>
+          </div>
+
+        </div>
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-5 lg:gap-6">
+            <!-- کارت ۱ -->
+            <a href="product.html" class="flex flex-col">
+              <div class="bg-[#F6F6F6] mb-3 overflow-hidden aspect-[3/4]">
+                <img
+                  src="./src/image/content/content-1/picture.png"
+                  id="image-1"
+                  alt="کت بلند پشمی"
+                  class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                />
+              </div>
+              <h3 class="text-sm font-bold text-black mb-2 text-right">کت بلند پشمی</h3>
+              <div class="flex items-center justify-between font-Yekan text-xs lg:text-sm">
+                <span class="text-gray-400 line-through">۴,۸۵۰,۰۰۰ تومان</span>
+                <span class="text-rose-700 font-bold">۳,۹۰۰,۰۰۰ تومان</span>
+              </div>
+            </a>
+
+            <a href="product.html" class="flex flex-col">
+              <div class="flex flex-col">
+              <div class="bg-[#F6F6F6] mb-3 overflow-hidden aspect-[3/4]">
+                <img
+                  src="./src/image/content/content-1/picture (1).png"
+                  alt="پافر زمستانی"
+                  class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                />
+              </div>
+              <h3 class="text-sm font-bold text-black mb-2 text-right">پافر زمستانی</h3>
+              <div class="flex items-center justify-between font-Yekan text-xs lg:text-sm">
+                <span class="text-gray-400 line-through">۶,۲۰۰,۰۰۰ تومان</span>
+                <span class="text-rose-700 font-bold">۵,۲۵۰,۰۰۰ تومان</span>
+              </div>
+            </div>
+
+            </a>
+            <a href="product.html" class="flex flex-col">
+              <div class="flex flex-col">
+              <div class="bg-[#F6F6F6] mb-3 overflow-hidden aspect-[3/4]">
+                <img
+                  src="./src/image/content/content-1/picture (2).png"
+                  alt="پافر بلند زمستانی"
+                  class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                />
+              </div>
+              <h3 class="text-sm font-bold text-black mb-2 text-right">پافر بلند زمستانی</h3>
+              <div class="flex items-center justify-between font-Yekan text-xs lg:text-sm">
+                <span class="text-gray-400 line-through">۵,۷۰۰,۰۰۰ تومان</span>
+                <span class="text-rose-700 font-bold">۴,۷۰۰,۰۰۰ تومان</span>
+              </div>
+            </div>
+            </a>
+
+            <a href="product.html" class="flex flex-col">
+              <div class="flex flex-col">
+              <div class="bg-[#F6F6F6] mb-3 overflow-hidden aspect-[3/4]">
+                <img
+                alt="پافربلندزمستانی"
+                  src="./src/image/content/content-1/picture (3).png"
+                  class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                />
+              </div>
+              <h3 class="text-sm font-bold text-black mb-2 text-right">پافر بلند کالکشن زمستانی</h3>
+              <div class="flex items-center justify-between font-Yekan text-xs lg:text-sm">
+                <span class="text-gray-400 line-through">۵,۵۰۰,۰۰۰ تومان</span>
+                <span class="text-rose-700 font-bold">۴,۵۰۰,۰۰۰ تومان</span>
+              </div>
+            </div>
+            </a>
+          </div>
+
+        <section class="bg-[#F9F9F9] p-6 md:p-8 rounded-lg border border-gray-200">
+          <h3 class="text-base font-bold mb-2">دیدگاه خریداران</h3>
+          <div class="flex items-center gap-2 mb-6 text-xs font-Yekan text-gray-600">
+            <span>۲ دیدگاه ثبت شده</span>
+            <span class="text-amber-500">★★★★★</span>
+            <span class="font-bold">۴.۵</span>
+          </div>
+
+          <div class="space-y-4">
+            <div class="border-t border-gray-200 pt-4">
+              <div class="flex justify-between items-center text-xs mb-1">
+                <span class="font-bold">آیسان فرهادی <span class="text-gray-500 font-normal">(خریدار)</span></span>
+                <span class="text-gray-400 font-Yekan text-[11px]">۱۴۰۲/۹/۳</span>
+              </div>
+              <div class="text-amber-500 text-xs mb-2">★★★★★</div>
+              <p class="text-xs text-gray-700 leading-relaxed">
+                کیفیت جنس و ضخامت پالتو عالی بود و دقیقاً مطابق تصویر ارسال شد. بسیار راضی هستم.
+              </p>
+            </div>
+
+            <div class="border-t border-gray-200 pt-4">
+              <div class="flex justify-between items-center text-xs mb-1">
+                <span class="font-bold">متین احمدی <span class="text-gray-500 font-normal">(خریدار)</span></span>
+                <span class="text-gray-400 font-Yekan text-[11px]">۱۴۰۲/۹/۱</span>
+              </div>
+              <div class="text-amber-500 text-xs mb-2">★★★★☆</div>
+              <p class="text-xs text-gray-700 leading-relaxed">
+                سایزبندی دقیق بود و تنخور شیکی دارد، ممنون از ارسال به موقع ایرانیان.
+              </p>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+      <footer class="w-full bg-[#2F2F2F] text-gray-300 pt-8 pb-6 px-6 lg:px-12 mt-12">
+        <div class="flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 gap-4">
+          <a href="index.html">
+            <img src="./src/image/logo-text.png" alt="ایرانیان" class="h-6 brightness-0 invert opacity-75" />
+          </a>
+          <p>© کلیه حقوق برای فروشگاه پوشاک ایرانیان محفوظ است.</p>
+        </div>
+      </footer>
+
+    </div>
+
+    <script>
+      const toFa = (n) => String(n).replace(/\d/g, (d) => "۰۱۲۳۴۵۶۷۸۹"[d]);
+      const MAX_QTY = 10;
+
+      // انتخاب سایز
+      const sizeBtns = document.querySelectorAll(".size-btn");
+      sizeBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          sizeBtns.forEach((b) => {
+            b.setAttribute("aria-checked", "false");
+            b.className = "size-btn w-10 h-10 border border-gray-300 text-xs font-bold hover:border-black transition";
+          });
+          btn.setAttribute("aria-checked", "true");
+          btn.className = "size-btn w-10 h-10 border border-black bg-black text-white text-xs font-bold";
+        });
+      });
+
+      // انتخاب رنگ
+      const colorBtns = document.querySelectorAll(".color-btn");
+      colorBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          colorBtns.forEach((b) => {
+            b.setAttribute("aria-checked", "false");
+            b.classList.remove("ring-2", "ring-offset-2", "ring-gray-500");
+          });
+          btn.setAttribute("aria-checked", "true");
+          btn.classList.add("ring-2", "ring-offset-2", "ring-gray-500");
+        });
+      });
+
+      // تعداد
+      let qty = 1;
+      const qtyEl = document.getElementById("qty-value");
+      const renderQty = () => (qtyEl.textContent = toFa(qty));
+      document.getElementById("qty-plus").addEventListener("click", () => {
+        if (qty < MAX_QTY) { qty++; renderQty(); }
+      });
+      document.getElementById("qty-minus").addEventListener("click", () => {
+        if (qty > 1) { qty--; renderQty(); }
+      });
+
+      // گالری
+      const mainImg = document.getElementById("main-product-img");
+      const thumbs = document.querySelectorAll(".thumb");
+      thumbs.forEach((t) => {
+        t.addEventListener("click", () => {
+          mainImg.src = t.src;
+          thumbs.forEach((x) => {
+            x.classList.remove("border-2", "border-black");
+            x.classList.add("border", "border-gray-200");
+          });
+          t.classList.remove("border", "border-gray-200");
+          t.classList.add("border-2", "border-black");
+        });
+      });
+
+      // افزودن به سبد
+      document.getElementById("add-to-cart").addEventListener("click", () => {
+        const size = document.querySelector('.size-btn[aria-checked="true"]').dataset.size;
+        const color = document.querySelector('.color-btn[aria-checked="true"]').dataset.color;
+        document.getElementById("cart-status").textContent =
+          "کت بلند پشمی، سایز " + size + "، رنگ " + color + "، " + toFa(qty) + " عدد به سبد اضافه شد.";
+      });
+    </script>
+  </body>
+</html>

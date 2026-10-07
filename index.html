@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>فروشگاه پوشاک ایرانیان</title>
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["Sans", "sans-serif"],
+            Yekan: ["Yekan", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+  />
+
+  <link rel="stylesheet" href="./src/css/main.css" />
+</head>
+
+<body class="bg-[#F8F8F8] text-[#1E1E1E] font-sans antialiased">
+
+  <div class="w-full max-w-[1440px] mx-auto bg-white shadow-sm overflow-hidden">
+
+    <!-- ================= HEADER ================= -->
+
+    <header
+      class="w-full px-6 lg:px-14 py-4 flex items-center justify-between border-b border-gray-100"
+    >
+
+      <div class="flex items-center">
+        <a href="#">
+          <img
+            src="./src/image/logo-text.png"
+            alt="ایرانیان"
+            class="h-7 w-auto object-contain"
+          />
+        </a>
+      </div>
+
+      <nav
+        class="hidden md:flex items-center gap-x-8 text-[14px] font-bold text-[#3D3D3D]"
+      >
+        <a href="#" class="hover:text-black transition">زنانه</a>
+        <a href="#" class="hover:text-black transition">مردانه</a>
+        <a href="#" class="hover:text-black transition">درباره ما</a>
+        <a href="#" class="hover:text-black transition">تماس باما</a>
+      </nav>
+
+      <div class="flex items-center gap-x-5">
+
+        <button type="button" class="hover:opacity-75 transition">
+          <img
+            src="./src/image/Search.png"
+            alt="جستجو"
+            class="w-5 h-5 object-contain"
+          />
+        </button>
+
+        <button type="button" class="hover:opacity-75 transition">
+          <img
+            src="./src/image/User Alt.png"
+            alt="حساب کاربری"
+            class="w-5 h-5 object-contain"
+          />
+        </button>
+
+        <a href="./sabadkharid.html" class="relative">
+
+          <button
+            type="button"
+            class="hover:opacity-75 transition"
+          >
+            <img
+              src="./src/image/Shopping Cart.png"
+              alt="سبد خرید"
+              class="w-5 h-5 object-contain"
+            />
+          </button>
+
+          <span
+            id="cart-count"
+            class="hidden absolute -top-2 -right-2 bg-red-600 text-white text-[9px] min-w-[17px] h-[17px] rounded-full items-center justify-center"
+          >
+            0
+          </span>
+
+        </a>
+
+      </div>
+    </header>
+
+
+
+    <section
+      class="w-full bg-[#0B0B0B] text-white py-24 px-4 text-center flex flex-col items-center justify-center"
+    >
+
+      <p
+        class="text-sm md:text-base font-bold text-[#D1D1D1] mb-2 tracking-wide font-Yekan"
+      >
+        %۳۰ تا ۵۰% تخفیف روی تمامی محصولات
+      </p>
+
+      <h1
+        class="text-5xl md:text-6xl font-extrabold uppercase tracking-tight mb-2"
+      >
+        black friday
+      </h1>
+
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-10">
+        جمعه سیاه
+      </h2>
+
+      <div class="flex flex-row items-center justify-center gap-4">
+
+        <a
+          href="./zanane.html"
+          class="w-36 py-2.5 bg-white text-black font-bold text-sm hover:bg-gray-100 transition text-center"
+        >
+          زنانه
+        </a>
+
+        <a
+          href="./mardane.html"
+          class="w-36 py-2.5 bg-white text-black font-bold text-sm hover:bg-gray-100 transition text-center"
+        >
+          مردانه
+        </a>
+
+      </div>
+    </section>
+
+
+
+    <main class="w-full px-6 lg:px-14 py-14 space-y-20">
+
+      <!-- Banner -->
+      <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <div class="relative group overflow-hidden">
+
+          <img
+            src="./src/image/content/women-organize.png"
+            alt="زنانه"
+            class="w-full h-[360px] lg:h-[420px] object-cover transition duration-500 group-hover:scale-105"
+          />
+
+          <span
+            class="absolute top-4 right-4 bg-white text-black text-xs font-bold px-3 py-1 shadow"
+          >
+            زنانه
+          </span>
+
+        </div>
+
+        <div class="relative group overflow-hidden">
+
+          <img
+            src="./src/image/content/men-organize.png"
+            alt="مردانه"
+            class="w-full h-[360px] lg:h-[420px] object-cover transition duration-500 group-hover:scale-105"
+          />
+
+          <span
+            class="absolute top-4 right-4 bg-white text-black text-xs font-bold px-3 py-1 shadow"
+          >
+            مردانه
+          </span>
+
+        </div>
+
+      </section>
+
+
+
+      <section id="products">
+
+        <div class="flex items-center gap-x-4 mb-8">
+
+          <h2
+            class="text-xl font-bold text-black border-b-2 border-black pb-1"
+          >
+            زنانه
+          </h2>
+
+          <h2
+            class="text-xl font-bold text-gray-400 pb-1 cursor-pointer hover:text-black transition"
+          >
+            مردانه
+          </h2>
+
+        </div>
+
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 lg:gap-6">
+
+
+
+          <div class="flex flex-col">
+
+            <a href="product.html">
+
+              <div
+                class="bg-[#F6F6F6] mb-3 overflow-hidden aspect-[3/4]"
+              >
+
+                <img
+                  id="image-1"
+                  src="./src/image/content/content-1/picture.png"
+                  alt="کت بلند پشمی"
+                  class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                />
+
+              </div>
+
+              <h3 class="text-sm font-bold text-black mb-2 text-right">
+                کت بلند پشمی
+              </h3>
+
+              <div
+                class="flex items-center justify-between font-Yekan text-xs lg:text-sm"
+              >
+
+                <span class="text-gray-400 line-through">
+                  ۴,۸۵۰,۰۰۰ تومان
+                </span>
+
+                <span class="text-rose-700 font-bold">
+                  ۳,۹۰۰,۰۰۰ تومان
+                </span>
+
+              </div>
+
+            </a>
+
+            <button
+              onclick="addToCart('product1', 'کت بلند پشمی', 3900000, './src/image/content/content-1/picture.png')"
+              class="mt-3 w-full bg-black text-white py-2 text-xs hover:bg-zinc-800 transition"
+            >
+              افزودن به سبد خرید
+            </button>
+
+          </div>
+
+
+
+          <div class="flex flex-col">
+
+            <a href="product.html">
+
+              <div
+                class="bg-[#F6F6F6] mb-3 overflow-hidden aspect-[3/4]"
+              >
+
+                <img
+                  src="./src/image/content/content-1/picture (1).png"
+                  alt="پافر زمستانی"
+                  class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                />
+
+              </div>
+
+              <h3 class="text-sm font-bold text-black mb-2 text-right">
+                پافر زمستانی
+              </h3>
+
+              <div
+                class="flex items-center justify-between font-Yekan text-xs lg:text-sm"
+              >
+
+                <span class="text-gray-400 line-through">
+                  ۶,۲۰۰,۰۰۰ تومان
+                </span>
+
+                <span class="text-rose-700 font-bold">
+                  ۵,۲۵۰,۰۰۰ تومان
+                </span>
+
+              </div>
+
+            </a>
+
+            <button
+              onclick="addToCart('product2', 'پافر زمستانی', 5250000, './src/image/content/content-1/picture (1).png')"
+              class="mt-3 w-full bg-black text-white py-2 text-xs hover:bg-zinc-800 transition"
+            >
+              افزودن به سبد خرید
+            </button>
+
+          </div>
+
+
+
+          <div class="flex flex-col">
+
+            <a href="product.html">
+
+              <div
+                class="bg-[#F6F6F6] mb-3 overflow-hidden aspect-[3/4]"
+              >
+
+                <img
+                  src="./src/image/content/content-1/picture (2).png"
+                  alt="پافر بلند زمستانی"
+                  class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                />
+
+              </div>
+
+              <h3 class="text-sm font-bold text-black mb-2 text-right">
+                پافر بلند زمستانی
+              </h3>
+
+              <div
+                class="flex items-center justify-between font-Yekan text-xs lg:text-sm"
+              >
+
+                <span class="text-gray-400 line-through">
+                  ۵,۷۰۰,۰۰۰ تومان
+                </span>
+
+                <span class="text-rose-700 font-bold">
+                  ۴,۷۰۰,۰۰۰ تومان
+                </span>
+
+              </div>
+
+            </a>
+
+            <button
+              onclick="addToCart('product3', 'پافر بلند زمستانی', 4700000, './src/image/content/content-1/picture (2).png')"
+              class="mt-3 w-full bg-black text-white py-2 text-xs hover:bg-zinc-800 transition"
+            >
+              افزودن به سبد خرید
+            </button>
+
+          </div>
+
+
+
+          <div class="flex flex-col">
+
+            <a href="product.html">
+
+              <div
+                class="bg-[#F6F6F6] mb-3 overflow-hidden aspect-[3/4]"
+              >
+
+                <img
+                  src="./src/image/content/content-1/picture (3).png"
+                  alt="پافر بلند کالکشن زمستانی"
+                  class="w-full h-full object-cover transition duration-300 hover:scale-105"
+                />
+
+              </div>
+
+              <h3 class="text-sm font-bold text-black mb-2 text-right">
+                پافر بلند کالکشن زمستانی
+              </h3>
+
+              <div
+                class="flex items-center justify-between font-Yekan text-xs lg:text-sm"
+              >
+
+                <span class="text-gray-400 line-through">
+                  ۵,۵۰۰,۰۰۰ تومان
+                </span>
+
+                <span class="text-rose-700 font-bold">
+                  ۴,۵۰۰,۰۰۰ تومان
+                </span>
+
+              </div>
+
+            </a>
+
+            <button
+              onclick="addToCart('product4', 'پافر بلند کالکشن زمستانی', 4500000, './src/image/content/content-1/picture (3).png')"
+              class="mt-3 w-full bg-black text-white py-2 text-xs hover:bg-zinc-800 transition"
+            >
+              افزودن به سبد خرید
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <section
+        class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[#FAFAFA] p-6 lg:p-8"
+      >
+
+        <div
+          class="w-full order-2 lg:order-1 flex flex-col justify-between"
+        >
+
+          <h3 class="text-lg lg:text-xl font-bold mb-6 text-right">
+            لباس‌های مجلسی زنانه
+          </h3>
+
+          <div class="swiper mySwiperWomen w-full mb-6">
+
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <img
+                  src="./src/image/content/content-center/card1.png"
+                  class="w-full h-[260px] object-cover"
+                  alt=""
+                />
+              </div>
+
+              <div class="swiper-slide">
+                <img
+                  src="./src/image/content/content-center/card2.png"
+                  class="w-full h-[260px] object-cover"
+                  alt=""
+                />
+              </div>
+
+              <div class="swiper-slide">
+                <img
+                  src="./src/image/content/content-center/card3.png"
+                  class="w-full h-[260px] object-cover"
+                  alt=""
+                />
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="text-center">
+
+            <a
+              href="#"
+              class="text-xs text-gray-500 hover:text-black font-bold transition inline-flex items-center gap-1"
+            >
+              دیدن محصولات بیشتر <span>←</span>
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="w-full order-1 lg:order-2">
+
+          <img
+            src="./src/image/content/content-center/picture.png"
+            alt="لباس مجلسی زنانه"
+            class="w-full h-[420px] lg:h-[480px] object-cover"
+          />
+
+        </div>
+
+      </section>
+
+
+
+      <section
+        class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center bg-[#FAFAFA] p-6 lg:p-8"
+      >
+
+        <div class="w-full order-1">
+
+          <img
+            src="./src/image/content/content-center/picture (5).png"
+            alt="لباس مجلسی مردانه"
+            class="w-full h-[420px] lg:h-[480px] object-cover"
+          />
+
+        </div>
+
+
+        <div
+          class="w-full order-2 flex flex-col justify-between"
+        >
+
+          <h3 class="text-lg lg:text-xl font-bold mb-6 text-right">
+            لباس‌های مجلسی مردانه
+          </h3>
+
+          <div class="swiper mySwiperMen w-full mb-6">
+
+            <div class="swiper-wrapper">
+
+              <div class="swiper-slide">
+                <img
+                  src="./src/image/content/content-center/card1.png"
+                  class="w-full h-[260px] object-cover"
+                  alt=""
+                />
+              </div>
+
+              <div class="swiper-slide">
+                <img
+                  src="./src/image/content/content-center/card2.png"
+                  class="w-full h-[260px] object-cover"
+                  alt=""
+                />
+              </div>
+
+              <div class="swiper-slide">
+                <img
+                  src="./src/image/content/content-center/card3.png"
+                  class="w-full h-[260px] object-cover"
+                  alt=""
+                />
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="text-center">
+
+            <a
+              href="#"
+              class="text-xs text-gray-500 hover:text-black font-bold transition inline-flex items-center gap-1"
+            >
+              دیدن محصولات بیشتر <span>←</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+
+    <footer class="site-footer">
+
+      <div class="footer-container">
+
+        <div class="footer-newsletter">
+
+          <h4>
+            اولین کسی باش که از تخفیف‌ها باخبر میشه
+          </h4>
+
+          <input type="email" placeholder="ایمیل" />
+
+          <input type="text" placeholder="نام شما" />
+
+          <button type="button">
+            اشتراک
+          </button>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>درباره لیلیان</h4>
+
+          <a href="#">اتاق خبر لیلیان</a>
+          <a href="#">همکاری با ما</a>
+          <a href="#">تماس با ما</a>
+          <a href="#">درباره ما</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>خدمات مشتریان</h4>
+
+          <a href="#">پاسخ به سوالات متداول</a>
+          <a href="#">شرایط استفاده</a>
+          <a href="#">حریم خصوصی</a>
+          <a href="#">گزارش باگ</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+          <h4>راهنمای خرید از لیلیان</h4>
+
+          <a href="#">خرید قسطی</a>
+          <a href="#">نحوه ثبت سفارش</a>
+          <a href="#">رویه ارسال سفارش</a>
+          <a href="#">شیوه‌های پرداخت</a>
+
+        </div>
+
+
+        <div class="footer-brand">
+
+          <img
+            src="./src/image/logo-text.png"
+            alt="لیلیان"
+            class="footer-logo"
+          />
+
+          <div class="footer-socials">
+
+            <a href="#" aria-label="Instagram">◎</a>
+            <a href="#" aria-label="Twitter">𝕏</a>
+            <a href="#" aria-label="LinkedIn">in</a>
+            <a href="#" aria-label="Pinterest">p</a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+  <script>
+
+    /* ===============================
+       SLIDER WOMEN
+    =============================== */
+
+    const swiperWomen = new Swiper(".mySwiperWomen", {
+
+      slidesPerView: 3,
+
+      spaceBetween: 16,
+
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+
+      breakpoints: {
+
+        0: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        },
+
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 16
+        }
+
+      }
+
+    });
+
+
+
+    const swiperMen = new Swiper(".mySwiperMen", {
+
+      slidesPerView: 3,
+
+      spaceBetween: 16,
+
+      autoplay: {
+        delay: 3200,
+        disableOnInteraction: false,
+      },
+
+      breakpoints: {
+
+        0: {
+          slidesPerView: 2,
+          spaceBetween: 10
+        },
+
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 16
+        }
+
+      }
+
+    });
+
+
+
+    const image1 = document.querySelector("#image-1");
+
+    if (image1) {
+
+      const originalSrc = image1.src;
+
+      image1.addEventListener("mouseenter", () => {
+
+        image1.src =
+          "./src/image/content/content-1/picture (1).png";
+
+      });
+
+      image1.addEventListener("mouseleave", () => {
+
+        image1.src = originalSrc;
+
+      });
+
+    }
+
+
+
+    function getCart() {
+
+      return JSON.parse(
+        localStorage.getItem("shoppingCart")
+      ) || [];
+
+    }
+
+
+    function saveCart(cart) {
+
+      localStorage.setItem(
+        "shoppingCart",
+        JSON.stringify(cart)
+      );
+
+      updateCartCount();
+
+    }
+
+
+    function addToCart(id, name, price, image) {
+
+      let cart = getCart();
+
+      const existingProduct = cart.find(
+        product => product.id === id
+      );
+
+      if (existingProduct) {
+
+        existingProduct.quantity += 1;
+
+      } else {
+
+        cart.push({
+
+          id: id,
+
+          name: name,
+
+          price: price,
+
+          image: image,
+
+          quantity: 1
+
+        });
+
+      }
+
+      saveCart(cart);
+
+      alert("محصول با موفقیت به سبد خرید اضافه شد.");
+
+    }
+
+
+    function updateCartCount() {
+
+      const cart = getCart();
+
+      const count = cart.reduce(
+        (total, product) =>
+          total + product.quantity,
+        0
+      );
+
+      const cartCount =
+        document.getElementById("cart-count");
+
+      if (!cartCount) return;
+
+      if (count > 0) {
+
+        cartCount.textContent = count;
+
+        cartCount.classList.remove("hidden");
+
+        cartCount.classList.add("flex");
+
+      } else {
+
+        cartCount.classList.add("hidden");
+
+        cartCount.classList.remove("flex");
+
+      }
+
+    }
+
+
+    updateCartCount();
+
+  </script>
+
+</body>
+
+</html>

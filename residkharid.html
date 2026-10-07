@@ -1,0 +1,738 @@
+```html
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>رسید خرید | لیلیان</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+
+  <style>
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+    }
+
+    @media print {
+
+      header,
+      footer,
+      .no-print {
+        display: none !important;
+      }
+
+      body {
+        background-color: white !important;
+      }
+
+      .print-border {
+        border: 1px solid #ddd !important;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body class="bg-[#f9f9f9] text-zinc-800 antialiased min-h-screen flex flex-col justify-between">
+
+
+
+<header class="border-b border-zinc-200 bg-white sticky top-0 z-50">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+
+    <div class="flex items-center gap-4 text-zinc-600">
+
+      <a href="sabadkharid.html">
+        🛒
+      </a>
+
+      <a href="#">
+        👤
+      </a>
+
+      <button type="button">
+        🔍
+      </button>
+
+    </div>
+
+
+    <div class="flex items-center gap-8">
+
+      <nav class="hidden md:flex items-center gap-6 text-xs md:text-sm">
+
+        <a href="#">زنانه</a>
+        <a href="#">مردانه</a>
+        <a href="#">درباره ما</a>
+        <a href="#">تماس با ما</a>
+
+      </nav>
+
+
+      <a
+        href="index.html"
+        class="text-xl font-black text-black">
+
+        لیلیان
+
+      </a>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+<main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 py-10 w-full">
+
+
+
+  <div class="flex items-center justify-center gap-4 mb-10 no-print">
+
+    <div class="w-8 h-8 rounded-full bg-zinc-800 text-white flex items-center justify-center text-xs font-bold shadow">
+      ✔
+    </div>
+
+    <div class="w-12 h-[1px] bg-zinc-300"></div>
+
+    <div class="w-8 h-8 rounded-full bg-zinc-400 text-white flex items-center justify-center text-xs font-bold">
+      ۳
+    </div>
+
+    <div class="w-12 h-[1px] bg-zinc-300"></div>
+
+    <div class="w-8 h-8 rounded-full bg-zinc-400 text-white flex items-center justify-center text-xs font-bold">
+      ۲
+    </div>
+
+    <div class="w-12 h-[1px] bg-zinc-300"></div>
+
+    <div class="w-8 h-8 rounded-full bg-zinc-400 text-white flex items-center justify-center text-xs font-bold">
+      ۱
+    </div>
+
+  </div>
+
+
+
+  <div
+    id="success-message"
+    class="bg-[#f0fdf4] border border-[#bbf7d0] text-[#15803d] py-3.5 px-4 rounded mb-8 flex items-center justify-center gap-2 text-xs md:text-sm font-bold shadow-sm">
+
+    <svg
+      class="w-5 h-5 text-[#16a34a]"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24">
+
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+
+    </svg>
+
+    <span id="payment-message">
+      پرداخت با موفقیت انجام شد
+    </span>
+
+  </div>
+
+
+
+  <div class="bg-white border border-zinc-300 p-5 mb-6 print-border">
+
+    <h2 class="font-bold text-sm mb-5 border-b pb-4">
+      اطلاعات سفارش
+    </h2>
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+
+      <div>
+        <span class="font-bold">
+          روش پرداخت:
+        </span>
+
+        <span id="payment-method">
+          -
+        </span>
+      </div>
+
+
+      <div>
+        <span class="font-bold">
+          درگاه:
+        </span>
+
+        <span id="bank">
+          -
+        </span>
+      </div>
+
+
+      <div>
+        <span class="font-bold">
+          وضعیت پرداخت:
+        </span>
+
+        <span
+          id="payment-status"
+          class="text-emerald-600 font-bold">
+          -
+        </span>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div
+    id="products-container"
+    class="border border-zinc-300 bg-white divide-y divide-zinc-200 print-border">
+
+  </div>
+
+
+
+  <div class="bg-white border border-zinc-300 mt-6 p-5 print-border">
+
+    <div class="space-y-3 text-xs">
+
+      <div class="flex justify-between">
+
+        <span>
+          قیمت کالاها
+        </span>
+
+        <span id="base-price">
+          -
+        </span>
+
+      </div>
+
+
+      <div class="flex justify-between">
+
+        <span>
+          هزینه ارسال
+        </span>
+
+        <span id="shipping-price">
+          -
+        </span>
+
+      </div>
+
+
+      <div
+        id="discount-row"
+        class="hidden flex justify-between text-emerald-600">
+
+        <span>
+          تخفیف
+        </span>
+
+        <span id="discount-price">
+          -
+        </span>
+
+      </div>
+
+
+      <div class="border-t pt-4 flex justify-between text-sm font-bold">
+
+        <span>
+          مبلغ نهایی
+        </span>
+
+        <span id="final-price">
+          -
+        </span>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 no-print">
+
+    <button
+      onclick="window.print()"
+      class="w-full sm:w-auto bg-[#3b3b3b] hover:bg-black text-white px-10 py-3 text-xs font-medium transition shadow">
+
+      چاپ فاکتور خرید
+
+    </button>
+
+
+    <a
+      href="index.html"
+      class="w-full sm:w-auto text-center border border-zinc-400 hover:border-black text-zinc-800 px-8 py-3 text-xs font-medium transition bg-white">
+
+      بازگشت به صفحه اصلی
+
+    </a>
+
+  </div>
+
+</main>
+
+
+
+<footer class="bg-[#3b3b3b] text-zinc-300 text-xs py-12 mt-16 no-print">
+
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+    <div>
+
+      <h4 class="text-white font-bold mb-3">
+        اولین کسی باش که از تخفیف‌ها باخبر میشه
+      </h4>
+
+      <input
+        type="email"
+        placeholder="ایمیل"
+        class="w-full p-2 mb-2 bg-[#666] text-white">
+
+      <input
+        type="text"
+        placeholder="نام شما"
+        class="w-full p-2 mb-2 bg-[#666] text-white">
+
+      <button
+        class="w-full border border-white p-2">
+
+        اشتراک
+
+      </button>
+
+    </div>
+
+
+    <div>
+
+      <h4 class="text-white font-bold mb-3">
+        درباره لیلیان
+      </h4>
+
+      <ul class="space-y-2">
+
+        <li>اتاق خبر لیلیان</li>
+        <li>همکاری با ما</li>
+        <li>تماس با ما</li>
+        <li>درباره ما</li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h4 class="text-white font-bold mb-3">
+        خدمات مشتریان
+      </h4>
+
+      <ul class="space-y-2">
+
+        <li>پاسخ به سوالات متداول</li>
+        <li>شرایط استفاده</li>
+        <li>حریم خصوصی</li>
+        <li>گزارش باگ</li>
+
+      </ul>
+
+    </div>
+
+
+    <div>
+
+      <h4 class="text-white font-bold mb-3">
+        راهنمای خرید از لیلیان
+      </h4>
+
+      <ul class="space-y-2">
+
+        <li>خرید قسطی</li>
+        <li>نحوه ثبت سفارش</li>
+        <li>رویه ارسال سفارش</li>
+        <li>شیوه‌های پرداخت</li>
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+
+
+function toPersianNumber(number) {
+
+  return Number(number || 0)
+    .toLocaleString("fa-IR");
+
+}
+
+
+
+function formatPrice(number) {
+
+  return toPersianNumber(number) + " تومان";
+
+}
+
+
+
+document.addEventListener(
+  "DOMContentLoaded",
+  function () {
+
+
+    const savedOrder =
+      localStorage.getItem("lilianOrder");
+
+
+
+    if (!savedOrder) {
+
+      alert("اطلاعات سفارش پیدا نشد.");
+
+      window.location.href =
+        "./index.html";
+
+      return;
+
+    }
+
+
+    let order;
+
+
+    try {
+
+      order =
+        JSON.parse(savedOrder);
+
+    }
+
+    catch (error) {
+
+      alert("اطلاعات سفارش نامعتبر است.");
+
+      window.location.href =
+        "./index.html";
+
+      return;
+
+    }
+
+
+
+    document.getElementById(
+      "payment-method"
+    ).innerText =
+      order.paymentMethod || "-";
+
+
+    document.getElementById(
+      "bank"
+    ).innerText =
+      order.bank || "-";
+
+
+    document.getElementById(
+      "payment-status"
+    ).innerText =
+      order.paymentStatus || "پرداخت موفق";
+
+
+
+    if (
+      order.paymentMethod ===
+      "پرداخت درب محل"
+    ) {
+
+      document.getElementById(
+        "payment-message"
+      ).innerText =
+        "سفارش شما با موفقیت ثبت شد";
+
+    }
+
+
+
+    const subtotal =
+      Number(order.subtotal || 0);
+
+
+    const shipping =
+      Number(order.shippingPrice || 0);
+
+
+    const discount =
+      Number(order.discount || 0);
+
+
+    const finalPrice =
+      Number(
+        order.finalPrice !== undefined
+          ? order.finalPrice
+          : subtotal + shipping - discount
+      );
+
+
+    document.getElementById(
+      "base-price"
+    ).innerText =
+      formatPrice(subtotal);
+
+
+    document.getElementById(
+      "shipping-price"
+    ).innerText =
+      shipping > 0
+        ? formatPrice(shipping)
+        : "رایگان";
+
+
+
+    if (discount > 0) {
+
+      document.getElementById(
+        "discount-row"
+      ).classList.remove("hidden");
+
+
+      document.getElementById(
+        "discount-price"
+      ).innerText =
+        "- " + formatPrice(discount);
+
+    }
+
+
+    document.getElementById(
+      "final-price"
+    ).innerText =
+      formatPrice(finalPrice);
+
+
+
+    const productsContainer =
+      document.getElementById(
+        "products-container"
+      );
+
+
+    let products =
+      order.products ||
+      order.items ||
+      order.cart ||
+      [];
+
+
+
+    if (!Array.isArray(products)) {
+
+      products = [];
+
+    }
+
+
+
+    if (products.length > 0) {
+
+
+      products.forEach(
+        function (product) {
+
+
+          const name =
+            product.name ||
+            product.title ||
+            "محصول";
+
+
+          const quantity =
+            Number(
+              product.quantity ||
+              product.count ||
+              1
+            );
+
+
+          const color =
+            product.color ||
+            product.selectedColor ||
+            "-";
+
+
+          const price =
+            Number(
+              product.price ||
+              product.unitPrice ||
+              0
+            );
+
+
+          const total =
+            Number(
+              product.total ||
+              price * quantity
+            );
+
+
+          const image =
+            product.image ||
+            product.img ||
+            "./src/image/content/content-1/picture (3).png";
+
+
+          const row =
+            document.createElement("div");
+
+
+          row.className =
+            "p-4 sm:p-6 flex flex-col md:flex-row items-center justify-between gap-4";
+
+
+          row.innerHTML = `
+
+            <div class="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 text-xs text-zinc-700 items-center text-right">
+
+              <div>
+                <span class="font-bold text-zinc-900">
+                  نام محصول:
+                </span>
+
+                ${name}
+
+              </div>
+
+
+              <div>
+                <span class="font-bold text-zinc-900">
+                  تعداد:
+                </span>
+
+                ${toPersianNumber(quantity)} عدد
+
+              </div>
+
+
+              <div>
+                <span class="font-bold text-zinc-900">
+                  رنگ:
+                </span>
+
+                ${color}
+
+              </div>
+
+
+              <div>
+                <span class="font-bold text-zinc-900">
+                  قیمت:
+                </span>
+
+                ${formatPrice(price)}
+
+              </div>
+
+
+              <div>
+                <span class="font-bold text-zinc-900">
+                  قیمت پست:
+                </span>
+
+                -
+
+              </div>
+
+
+              <div>
+                <span class="font-bold text-zinc-900">
+                  قیمت کل:
+                </span>
+
+                ${formatPrice(total)}
+
+              </div>
+
+            </div>
+
+
+            <div class="w-16 h-20 bg-zinc-100 flex-shrink-0 overflow-hidden rounded border border-zinc-200">
+
+              <img
+                src="${image}"
+                alt="${name}"
+                class="w-full h-full object-cover">
+
+            </div>
+
+          `;
+
+
+          productsContainer.appendChild(row);
+
+        }
+      );
+
+
+    }
+
+    else {
+
+
+      productsContainer.innerHTML = `
+
+        <div class="p-8 text-center text-xs text-zinc-500">
+
+          اطلاعات جزئی محصولات در سفارش ذخیره نشده است.
+
+        </div>
+
+      `;
+
+    }
+
+  }
+
+);
+
+</script>
+
+
+</body>
+</html>
+```

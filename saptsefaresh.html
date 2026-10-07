@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ثبت سفارش - لیلیان</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @font-face {
+      font-family: "IranianSans";
+      src: url("./fonts/Iranian Sans.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Yekan";
+      src: url("./fonts/Yekan.ttf") format("truetype");
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "IranianSans", "Yekan", sans-serif;
+      background: #f8f8f8;
+      color: #1e1e1e;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="bg-white border-b border-zinc-200">
+    <div class="max-w-[1440px] mx-auto px-6 py-5">
+
+      <div class="flex items-center justify-between">
+
+        <div class="text-2xl font-bold">
+          لیلیان
+        </div>
+
+        <div class="text-sm text-zinc-500">
+          ثبت سفارش
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- STEPPER -->
+  <section class="bg-white border-b border-zinc-200">
+    <div class="max-w-[900px] mx-auto px-6 py-6">
+
+      <div class="flex items-center justify-center">
+
+        <!-- STEP 1 -->
+        <div class="flex items-center">
+
+          <div
+            id="step1"
+            class="w-8 h-8 rounded-full bg-zinc-300 text-white flex items-center justify-center text-xs font-bold">
+            ✔
+          </div>
+
+          <span class="mr-2 text-xs text-zinc-600">
+            سبد خرید
+          </span>
+
+        </div>
+
+
+        <div class="w-20 h-px bg-zinc-300 mx-4"></div>
+
+
+        <!-- STEP 2 -->
+        <div class="flex items-center">
+
+          <div
+            id="step2"
+            class="w-8 h-8 rounded-full bg-zinc-800 text-white flex items-center justify-center text-xs font-bold shadow">
+            ۲
+          </div>
+
+          <span class="mr-2 text-xs text-zinc-800 font-bold">
+            اطلاعات ارسال
+          </span>
+
+        </div>
+
+
+        <div class="w-20 h-px bg-zinc-300 mx-4"></div>
+
+
+        <!-- STEP 3 -->
+        <div class="flex items-center">
+
+          <div
+            id="step3"
+            class="w-8 h-8 rounded-full bg-zinc-200 text-zinc-500 flex items-center justify-center text-xs font-bold">
+            ۳
+          </div>
+
+          <span class="mr-2 text-xs text-zinc-500">
+            پرداخت
+          </span>
+
+        </div>
+
+
+        <div class="w-20 h-px bg-zinc-300 mx-4"></div>
+
+
+        <!-- STEP 4 -->
+        <div class="flex items-center">
+
+          <div
+            id="step4"
+            class="w-8 h-8 rounded-full bg-zinc-200 text-zinc-500 flex items-center justify-center text-xs font-bold">
+            ۴
+          </div>
+
+          <span class="mr-2 text-xs text-zinc-500">
+            تکمیل سفارش
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MAIN -->
+  <main class="max-w-[1200px] mx-auto px-6 py-10">
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+
+      <!-- LEFT / MAIN CONTENT -->
+      <div class="lg:col-span-2 space-y-6">
+
+
+        <!-- SHIPPING -->
+        <div class="bg-white border border-zinc-200 p-6">
+
+          <div class="flex items-center justify-between mb-6">
+
+            <h2 class="text-lg font-bold">
+              روش ارسال
+            </h2>
+
+            <span class="text-xs text-zinc-400">
+              انتخاب روش ارسال
+            </span>
+
+          </div>
+
+
+          <div class="space-y-4">
+
+
+            <!-- POST -->
+            <label
+              id="label-post"
+              class="flex items-start gap-4 p-4 border border-zinc-200 rounded cursor-pointer transition-all">
+
+              <input
+                type="radio"
+                name="shipping_method"
+                value="post"
+                onchange="updateShipping('post')"
+                class="mt-1">
+
+              <div class="flex-1">
+
+                <div class="flex items-center justify-between">
+
+                  <span class="font-bold text-sm">
+                    پست پیشتاز
+                  </span>
+
+                  <span class="text-xs font-bold">
+                    ۴۵,۰۰۰ تومان
+                  </span>
+
+                </div>
+
+                <p class="text-xs text-zinc-500 mt-2">
+                  ارسال توسط پست پیشتاز
+                </p>
+
+              </div>
+
+            </label>
+
+
+            <!-- PEYK -->
+            <label
+              id="label-peyk"
+              class="flex items-start gap-4 p-4 border border-black rounded cursor-pointer transition-all bg-zinc-50">
+
+              <input
+                type="radio"
+                name="shipping_method"
+                value="peyk"
+                checked
+                onchange="updateShipping('peyk')"
+                class="mt-1">
+
+              <div class="flex-1">
+
+                <div class="flex items-center justify-between">
+
+                  <span class="font-bold text-sm">
+                    ارسال با پیک
+                  </span>
+
+                  <span class="text-xs font-bold text-emerald-600">
+                    رایگان
+                  </span>
+
+                </div>
+
+                <p class="text-xs text-zinc-500 mt-2">
+                  ارسال سریع با پیک
+                </p>
+
+              </div>
+
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <!-- ADDRESS -->
+        <div class="bg-white border border-zinc-200 p-6">
+
+          <div class="flex items-center justify-between mb-6">
+
+            <h2 class="text-lg font-bold">
+              آدرس تحویل
+            </h2>
+
+            <button
+              type="button"
+              onclick="toggleEditAddress()"
+              class="text-xs text-blue-600 hover:text-blue-800">
+
+              ویرایش آدرس
+
+            </button>
+
+          </div>
+
+
+          <!-- ADDRESS DISPLAY -->
+          <div id="address-display">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+
+              <div>
+                <span class="text-zinc-400 text-xs">
+                  استان:
+                </span>
+
+                <p id="val-ostan" class="font-medium mt-1">
+                  تهران
+                </p>
+              </div>
+
+
+              <div>
+                <span class="text-zinc-400 text-xs">
+                  شهر:
+                </span>
+
+                <p id="val-city" class="font-medium mt-1">
+                  تهران
+                </p>
+              </div>
+
+
+              <div>
+                <span class="text-zinc-400 text-xs">
+                  کد پستی:
+                </span>
+
+                <p id="val-postal" class="font-medium mt-1">
+                  ۱۲۳۴۵۶۷۸۹۰
+                </p>
+              </div>
+
+
+              <div>
+                <span class="text-zinc-400 text-xs">
+                  شماره تماس:
+                </span>
+
+                <p id="val-phone" class="font-medium mt-1">
+                  ۰۹۱۲۱۲۳۴۵۶۷
+                </p>
+              </div>
+
+
+              <div class="md:col-span-2">
+
+                <span class="text-zinc-400 text-xs">
+                  آدرس:
+                </span>
+
+                <p id="val-address" class="font-medium mt-1 leading-7">
+                  تهران، خیابان ولیعصر، کوچه نمونه، پلاک ۱۰
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- ADDRESS EDIT -->
+          <div id="address-edit-form" class="hidden">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+              <input
+                id="input-ostan"
+                type="text"
+                value="تهران"
+                placeholder="استان"
+                class="border border-zinc-300 px-4 py-3 text-sm outline-none focus:border-black">
+
+              <input
+                id="input-city"
+                type="text"
+                value="تهران"
+                placeholder="شهر"
+                class="border border-zinc-300 px-4 py-3 text-sm outline-none focus:border-black">
+
+              <input
+                id="input-postal"
+                type="text"
+                value="۱۲۳۴۵۶۷۸۹۰"
+                placeholder="کد پستی"
+                class="border border-zinc-300 px-4 py-3 text-sm outline-none focus:border-black">
+
+              <input
+                id="input-phone"
+                type="text"
+                value="۰۹۱۲۱۲۳۴۵۶۷"
+                placeholder="شماره تماس"
+                class="border border-zinc-300 px-4 py-3 text-sm outline-none focus:border-black">
+
+              <textarea
+                id="input-address"
+                rows="3"
+                placeholder="آدرس"
+                class="md:col-span-2 border border-zinc-300 px-4 py-3 text-sm outline-none focus:border-black">تهران، خیابان ولیعصر، کوچه نمونه، پلاک ۱۰</textarea>
+
+            </div>
+
+
+            <button
+              type="button"
+              onclick="saveAddress()"
+              class="mt-4 bg-zinc-800 text-white px-6 py-3 text-xs hover:bg-black">
+
+              ذخیره آدرس
+
+            </button>
+
+          </div>
+
+
+          <button
+            type="button"
+            onclick="addNewAddressPrompt()"
+            class="mt-6 text-xs text-zinc-500 hover:text-black">
+
+            + افزودن آدرس جدید
+
+          </button>
+
+        </div>
+
+
+        <!-- NOTES -->
+        <div class="bg-white border border-zinc-200 p-6">
+
+          <h2 class="text-lg font-bold mb-5">
+            توضیحات سفارش
+          </h2>
+
+          <textarea
+            id="order-notes"
+            rows="4"
+            placeholder="اگر توضیحی برای سفارش دارید اینجا بنویسید..."
+            class="w-full border border-zinc-300 p-4 text-sm outline-none focus:border-black resize-none"></textarea>
+
+        </div>
+
+
+        <!-- CONTINUE -->
+        <div class="flex justify-end">
+
+          <button
+            type="button"
+            onclick="submitShippingStep()"
+            class="bg-zinc-800 text-white px-8 py-3 text-xs font-medium hover:bg-black transition shadow">
+
+            ثبت و ادامه ←
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <!-- SIDEBAR -->
+      <div>
+
+        <div class="bg-white border border-zinc-200 p-6 sticky top-5">
+
+          <h2 class="text-lg font-bold mb-6">
+            خلاصه سفارش
+          </h2>
+
+
+          <div class="flex justify-between text-sm mb-4">
+
+            <span class="text-zinc-500">
+              جمع کالاها
+            </span>
+
+            <span>
+              ۵,۰۰۰,۰۰۰ تومان
+            </span>
+
+          </div>
+
+
+          <div class="flex justify-between text-sm mb-4">
+
+            <span class="text-zinc-500">
+              هزینه ارسال
+            </span>
+
+            <span
+              id="shipping-cost-text"
+              class="font-bold text-emerald-600">
+
+              رایگان
+
+            </span>
+
+          </div>
+
+
+          <div class="border-t border-zinc-200 pt-5 mt-5">
+
+            <div class="flex justify-between items-center">
+
+              <span class="font-bold">
+                مبلغ نهایی
+              </span>
+
+              <span
+                id="total-price-text"
+                class="font-bold text-lg">
+
+                ۵,۰۰۰,۰۰۰ تومان
+
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <button
+            type="button"
+            onclick="submitShippingStep()"
+            class="w-full bg-[#c31a22] text-white py-3 mt-6 text-xs font-bold hover:bg-red-700 transition">
+
+            ثبت سفارش
+
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <script>
+
+    let shippingMethod = "peyk";
+
+
+    // تغییر روش ارسال
+    function updateShipping(type) {
+
+      shippingMethod = type;
+
+      const post = document.getElementById("label-post");
+      const peyk = document.getElementById("label-peyk");
+
+      const shippingText =
+        document.getElementById("shipping-cost-text");
+
+      const totalText =
+        document.getElementById("total-price-text");
+
+
+      if (type === "peyk") {
+
+        peyk.className =
+          "flex items-start gap-4 p-4 border border-black rounded cursor-pointer transition-all bg-zinc-50";
+
+        post.className =
+          "flex items-start gap-4 p-4 border border-zinc-200 rounded cursor-pointer transition-all";
+
+        shippingText.innerText = "رایگان";
+
+        shippingText.className =
+          "font-bold text-emerald-600";
+
+        totalText.innerText =
+          "۵,۰۰۰,۰۰۰ تومان";
+
+      } else {
+
+        post.className =
+          "flex items-start gap-4 p-4 border border-black rounded cursor-pointer transition-all bg-zinc-50";
+
+        peyk.className =
+          "flex items-start gap-4 p-4 border border-zinc-200 rounded cursor-pointer transition-all";
+
+        shippingText.innerText =
+          "۴۵,۰۰۰ تومان";
+
+        shippingText.className =
+          "font-bold text-zinc-800";
+
+        totalText.innerText =
+          "۵,۰۴۵,۰۰۰ تومان";
+
+      }
+
+    }
+
+
+    // ویرایش آدرس
+    function toggleEditAddress() {
+
+      document
+        .getElementById("address-display")
+        .classList.toggle("hidden");
+
+      document
+        .getElementById("address-edit-form")
+        .classList.toggle("hidden");
+
+    }
+
+
+    // ذخیره آدرس
+    function saveAddress() {
+
+      document.getElementById("val-ostan").innerText =
+        document.getElementById("input-ostan").value;
+
+      document.getElementById("val-city").innerText =
+        document.getElementById("input-city").value;
+
+      document.getElementById("val-postal").innerText =
+        document.getElementById("input-postal").value;
+
+      document.getElementById("val-phone").innerText =
+        document.getElementById("input-phone").value;
+
+      document.getElementById("val-address").innerText =
+        document.getElementById("input-address").value;
+
+      toggleEditAddress();
+
+      alert("آدرس شما با موفقیت بروزرسانی شد.");
+
+    }
+
+
+    // افزودن آدرس جدید
+    function addNewAddressPrompt() {
+
+      const newAddress =
+        prompt("لطفاً آدرس جدید خود را وارد کنید:");
+
+      if (newAddress && newAddress.trim() !== "") {
+
+        document.getElementById("val-address").innerText =
+          newAddress;
+
+        alert("آدرس جدید ثبت شد!");
+
+      }
+
+    }
+
+
+    // ثبت مرحله ارسال و رفتن به درگاه پرداخت
+    function submitShippingStep() {
+
+      const selectedMethod =
+        document.querySelector(
+          'input[name="shipping_method"]:checked'
+        );
+
+
+      if (!selectedMethod) {
+
+        alert("لطفاً روش ارسال را انتخاب کنید.");
+
+        return;
+
+      }
+
+
+      const orderData = {
+
+        shippingMethod: selectedMethod.value,
+
+        shippingTitle:
+          selectedMethod.value === "peyk"
+            ? "ارسال با پیک"
+            : "پست پیشتاز",
+
+        ostan:
+          document.getElementById("val-ostan").innerText,
+
+        city:
+          document.getElementById("val-city").innerText,
+
+        postal:
+          document.getElementById("val-postal").innerText,
+
+        phone:
+          document.getElementById("val-phone").innerText,
+
+        address:
+          document.getElementById("val-address").innerText,
+
+        notes:
+          document.getElementById("order-notes").value,
+
+        total:
+          selectedMethod.value === "peyk"
+            ? 5000000
+            : 5045000
+
+      };
+
+
+      // ذخیره اطلاعات سفارش
+      localStorage.setItem(
+        "lilianOrder",
+        JSON.stringify(orderData)
+      );
+
+
+      // ذخیره اینکه مرحله ارسال تکمیل شده
+      localStorage.setItem(
+        "shippingCompleted",
+        "true"
+      );
+
+
+      // مرحله بعد
+      localStorage.setItem(
+        "checkoutStep",
+        "3"
+      );
+
+
+      // رفتن به صفحه درگاه پرداخت
+      window.location.href =
+        "./dargahpardakht.html";
+
+    }
+
+
+    // هنگام باز شدن صفحه
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+        updateShipping("peyk");
+
+      }
+    );
+
+  </script>
+
+</body>
+</html>
